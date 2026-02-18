@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KAPE TA ILOILO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background:#f5f0ea;
+    color:#3e2c23;
+}
+
+/* HEADER */
+header {
+    background:#4b2e2b;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+header h1 {
+    font-size:28px;
+    letter-spacing:2px;
+}
+
+header p {
+    font-size:14px;
+    opacity:0.9;
+}
+
+/* NAVIGATION */
+nav {
+    background:#6f4e37;
+    padding:12px;
+    text-align:center;
+}
+
+nav a {
+    color:white;
+    text-decoration:none;
+    margin:0 18px;
+    font-weight:bold;
+    transition:0.3s ease;
+}
+
+nav a:hover {
+    color:#ffd7b5;
+}
+
+/* HERO SECTION */
+.hero {
+    height:450px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1509042239860-f550ce710b93')
+        no-repeat center/cover;
+}
+
+.hero-content {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero h2 {
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.hero p {
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.hero button {
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    background:#c69c6d;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.hero button:hover {
+    background:#a67c52;
+    transform:scale(1.05);
+}
+
+/* SECTION */
+.section {
+    padding:70px 20px;
+    text-align:center;
+}
+
+/* FOOTER */
+footer {
+    background:#4b2e2b;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+    margin-top:40px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity:0; transform:translateY(20px); }
+    to { opacity:1; transform:translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>☕ KAPE TA ILOILO</h1>
+    <p>Your Daily Dose of Fresh Brew</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="type.html">Types of Coffee</a>
+    <a href="Localbeans.html">Local Coffee Beans</a>
+    <a href="localshop.html">Local Coffee Shops</a>
+    <a href="guide.html">Brewing Guide</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Fresh Coffee. Cozy Vibes.</h2>
+        <p>Discover Iloilo’s finest local brews and coffee culture.</p>
+        <button onclick="location.href='localshop.html'">
+            Explore Coffee Shops
+        </button>
+    </div>
+</section>
+
+<footer>
+<p>© 2026 KAPE TA ILOILO | Open Daily 7am - 9pm</p>
+</footer>
+
+</body>
+</html>

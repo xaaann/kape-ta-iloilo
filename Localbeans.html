@@ -1,150 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Local Coffee Beans | KAPE TA ILOILO</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Local Coffee Beans | KAPE TA ILOILO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f5f0ea;
-            color: #3e2c23;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f5f0ea;
+    color: #3e2c23;
+}
 
-        header {
-            background-color: #4b2e2b;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+/* HEADER */
+header {
+    background-color: #4b2e2b;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
 
-        nav {
-            background-color: #6f4e37;
-            padding: 10px;
-            text-align: center;
-        }
+/* NAV */
+nav {
+    background-color: #6f4e37;
+    padding: 12px;
+    text-align: center;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+nav a:hover {
+    color: #ffd7b5;
+}
 
-        .section {
-            padding: 50px 20px;
-            text-align: center;
-        }
+/* SECTION */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
 
-        .bean {
-            background: white;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 700px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+/* CONTAINER */
+.bean-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: 60px;
+}
 
-        .bean img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
+/* CARD */
+.bean {
+    background: white;
+    padding: 15px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    text-align: center;
+    flex: 1 1 300px;
+    transition: 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s forwards;
+}
 
-        .location {
-            margin-top: 10px;
-            font-size: 14px;
-            background-color: #f2e6dc;
-            padding: 10px;
-            border-radius: 8px;
-        }
+/* Stagger effect */
+.bean:nth-child(1) { animation-delay: 0.2s; }
+.bean:nth-child(2) { animation-delay: 0.4s; }
+.bean:nth-child(3) { animation-delay: 0.6s; }
 
-        .map {
-            margin-top: 15px;
-        }
+.bean:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+}
 
-        .map iframe {
-            width: 100%;
-            height: 250px;
-            border: 0;
-            border-radius: 10px;
-        }
-    </style>
+/* IMAGE */
+.bean img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease;
+}
+
+.bean:hover img {
+    transform: scale(1.08);
+}
+
+/* LOCATION */
+.location {
+    margin-top: 12px;
+    font-size: 14px;
+    background-color: #f2e6dc;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* MAP */
+.map {
+    margin-top: 15px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
 </head>
+
 <body>
 
 <header>
-    <h1>☕ Local Coffee Beans in Iloilo</h1>
+<h1>☕ Local Coffee Beans in Iloilo</h1>
 </header>
 
 <nav>
-    <a href="Kapeta.html">Home</a>
-    <a href="type.html">Types of Coffee</a>
-    <a href="Localbeans.html">Local Coffee Beans</a>
-    <a href="localshop.html">Local Coffee Shops</a>
-    <a href="guide.html">Brewing Guide</a>
-    <a href="contact.html">Contact</a>
+<a href="index.html">Home</a>
+<a href="type.html">Types of Coffee</a>
+<a href="Localbeans.html">Local Coffee Beans</a>
+<a href="localshop.html">Local Coffee Shops</a>
+<a href="guide.html">Brewing Guide</a>
+<a href="contact.html">Contact</a>
 </nav>
 
 <section class="section">
+<h2>Discover Local Coffee Beans</h2>
+<p>Explore locally available beans and where to find them in Iloilo City.</p>
+</section>
+
+<section class="bean-container">
 
 <!-- MESTIZO -->
 <div class="bean">
-    <img src="mestizo.jpg" alt="Mestizo Beans">
-    <h3>Mestizo</h3>
-    <p>Strong flavor with high caffeine content. Commonly grown in the Philippines.</p>
+<img src="mestizo.jpg" alt="Mestizo Beans">
+<h3>Mestizo</h3>
+<p>Strong flavor with high caffeine content. Commonly grown in the Philippines.</p>
 
-    <div class="location">
-        📍 <strong>Mestizo Coffee Supplier</strong><br>
-        Located at La Paz Market, La Paz, Iloilo City.<br>
-        🔎 Search in Google Maps: <em>"Mestizo Coffee La Paz Iloilo"</em>
-    </div>
+<div class="location">
+📍 <strong>Mestizo Coffee Supplier</strong><br>
+La Paz Market, La Paz, Iloilo City.<br>
+🔎 Google Maps: <em>"Mestizo Coffee La Paz Iloilo"</em>
+</div>
 
-    <div class="map">
-        <iframe src="https://www.google.com/maps?q=Mestizo%20Coffee%20La%20Paz%20Iloilo&output=embed"></iframe>
-    </div>
+<div class="map">
+<iframe src="https://www.google.com/maps?q=Mestizo%20Coffee%20La%20Paz%20Iloilo&output=embed"></iframe>
+</div>
 </div>
 
 <!-- ROASTED -->
 <div class="bean">
-    <img src="roasted.jpg" alt="Roasted Beans">
-    <h3>Roasted Beans</h3>
-    <p>Smoother and more aromatic coffee bean with balanced acidity.</p>
+<img src="roasted.jpg" alt="Roasted Beans">
+<h3>Roasted Beans</h3>
+<p>Smoother and more aromatic coffee bean with balanced acidity.</p>
 
-    <div class="location">
-        📍 <strong>Roasted Coffee Supplier</strong><br>
-        Available at Iloilo Central Market, Iloilo City.<br>
-        🔎 Search in Google Maps: <em>"Roasted Coffee Iloilo City"</em>
-    </div>
+<div class="location">
+📍 <strong>Roasted Coffee Supplier</strong><br>
+Iloilo Central Market, Iloilo City.<br>
+🔎 Google Maps: <em>"Roasted Coffee Iloilo City"</em>
+</div>
 
-    <div class="map">
-        <iframe src="https://www.google.com/maps?q=Roasted%20Coffee%20Iloilo%20City&output=embed"></iframe>
-    </div>
+<div class="map">
+<iframe src="https://www.google.com/maps?q=Roasted%20Coffee%20Iloilo%20City&output=embed"></iframe>
+</div>
 </div>
 
 <!-- DRIP COFFEE -->
 <div class="bean">
-    <img src="drip.jpg" alt="Drip Coffee Beans">
-    <h3>Drip Coffee Beans</h3>
-    <p>Perfect for drip coffee makers, offering a clean and balanced flavor.</p>
+<img src="drip.jpg" alt="Drip Coffee Beans">
+<h3>Drip Coffee Beans</h3>
+<p>Perfect for drip coffee makers, offering a clean and balanced flavor.</p>
 
-    <div class="location">
-        📍 <strong>Drip Coffee Supplier</strong><br>
-        Found at SM City Iloilo, Mandurriao, Iloilo City.<br>
-        🔎 Search in Google Maps: <em>"Drip Coffee SM City Iloilo"</em>
-    </div>
+<div class="location">
+📍 <strong>Drip Coffee Supplier</strong><br>
+SM City Iloilo, Mandurriao, Iloilo City.<br>
+🔎 Google Maps: <em>"Drip Coffee SM City Iloilo"</em>
+</div>
 
-    <div class="map">
-        <iframe src="https://www.google.com/maps?q=Drip%20Coffee%20SM%20City%20Iloilo&output=embed"></iframe>
-    </div>
+<div class="map">
+<iframe src="https://www.google.com/maps?q=Drip%20Coffee%20SM%20City%20Iloilo&output=embed"></iframe>
+</div>
 </div>
 
 </section>

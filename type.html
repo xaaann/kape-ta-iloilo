@@ -8,74 +8,121 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #f5f0ea;
     color: #3e2c23;
 }
 
+/* HEADER */
 header {
     background-color: #4b2e2b;
     color: white;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
 }
 
+/* NAV */
 nav {
     background-color: #6f4e37;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 18px;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #ffd7b5;
 }
 
+/* SECTION */
 .section {
-    padding: 50px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
+/* CONTAINER */
+.coffee-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: 60px;
+}
+
+/* CARD */
 .coffee {
     background: white;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 700px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    text-align: center;
+    flex: 1 1 300px;
+    transition: 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s forwards;
 }
 
+/* Stagger animation */
+.coffee:nth-child(1) { animation-delay: 0.2s; }
+.coffee:nth-child(2) { animation-delay: 0.4s; }
+.coffee:nth-child(3) { animation-delay: 0.6s; }
+.coffee:nth-child(4) { animation-delay: 0.8s; }
+
+.coffee:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+/* IMAGE ZOOM */
 .coffee img {
     width: 100%;
-    height: 250px;
+    height: 400px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 12px;
     margin-bottom: 15px;
+    transition: transform 0.5s ease;
 }
 
+.coffee:hover img {
+    transform: scale(1.08);
+}
+
+/* LOCATION */
 .location {
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 14px;
     background-color: #f2e6dc;
     padding: 10px;
     border-radius: 8px;
+    text-align: left;
 }
 
+/* MAP */
 .map {
     margin-top: 15px;
 }
 
 .map iframe {
     width: 100%;
-    height: 250px;
+    height: 200px;
     border: 0;
     border-radius: 10px;
+}
+
+/* KEYFRAMES */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 </style>
 </head>
@@ -87,7 +134,7 @@ nav a:hover {
 </header>
 
 <nav>
-<a href="Kapeta.html">Home</a>
+<a href="index.html">Home</a>
 <a href="type.html">Types of Coffee</a>
 <a href="Localbeans.html">Local Coffee Beans</a>
 <a href="localshop.html">Local Coffee Shops</a>
@@ -96,19 +143,21 @@ nav a:hover {
 </nav>
 
 <section class="section">
+<h2>Explore Popular Coffee Types</h2>
+<p>Discover different coffee styles and where to try them in Iloilo City.</p>
+</section>
+
+<section class="coffee-container">
 
 <!-- ESPRESSO -->
 <div class="coffee">
 <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a" alt="Espresso">
 <h3>Espresso</h3>
-<p>A concentrated coffee brewed by forcing hot water through finely-ground beans. Strong and bold flavor.</p>
-
+<p>A concentrated coffee brewed by forcing hot water through finely-ground beans.</p>
 <div class="location">
 📍 <strong>Madge Café</strong><br>
-Located inside La Paz Public Market, La Paz, Iloilo City.<br>
-🔎 Search in Google Maps: <em>"Madge Cafe Iloilo"</em>
+La Paz Public Market, La Paz, Iloilo City.
 </div>
-
 <div class="map">
 <iframe src="https://www.google.com/maps?q=Madge%20Cafe%20Iloilo&output=embed"></iframe>
 </div>
@@ -118,14 +167,11 @@ Located inside La Paz Public Market, La Paz, Iloilo City.<br>
 <div class="coffee">
 <img src="capuccino.jpg" alt="Cappuccino">
 <h3>Cappuccino</h3>
-<p>A perfect balance of espresso, steamed milk, and thick milk foam on top.</p>
-
+<p>Espresso with steamed milk and thick milk foam on top.</p>
 <div class="location">
 📍 <strong>Coffee Break</strong><br>
-Multiple branches in Iloilo City including SM City Iloilo and Robinsons Iloilo.<br>
-🔎 Search in Google Maps: <em>"Coffee Break Iloilo"</em>
+SM City Iloilo & Robinsons Iloilo.
 </div>
-
 <div class="map">
 <iframe src="https://www.google.com/maps?q=Coffee%20Break%20Iloilo&output=embed"></iframe>
 </div>
@@ -135,14 +181,11 @@ Multiple branches in Iloilo City including SM City Iloilo and Robinsons Iloilo.<
 <div class="coffee">
 <img src="latte.png" alt="Latte">
 <h3>Latte</h3>
-<p>A smooth coffee drink made with espresso and more steamed milk, with a light layer of foam.</p>
-
+<p>Espresso mixed with more steamed milk and light foam.</p>
 <div class="location">
 📍 <strong>Neighbor Coffee</strong><br>
-Located along Diversion Road, Mandurriao, Iloilo City near business establishments.<br>
-🔎 Search in Google Maps: <em>"Neighbor Coffee Iloilo"</em>
+Diversion Road, Mandurriao, Iloilo City.
 </div>
-
 <div class="map">
 <iframe src="https://www.google.com/maps?q=Neighbor%20Coffee%20Iloilo&output=embed"></iframe>
 </div>
@@ -152,14 +195,11 @@ Located along Diversion Road, Mandurriao, Iloilo City near business establishmen
 <div class="coffee">
 <img src="americano.jpg" alt="Americano">
 <h3>Americano</h3>
-<p>Espresso diluted with hot water, giving it a similar strength to drip coffee but richer taste.</p>
-
+<p>Espresso diluted with hot water for a smoother taste.</p>
 <div class="location">
 📍 <strong>The Good Locals</strong><br>
-Located in Festive Walk Parade, Mandurriao, Iloilo City.<br>
-🔎 Search in Google Maps: <em>"The Good Locals Iloilo"</em>
+Festive Walk Parade, Mandurriao, Iloilo City.
 </div>
-
 <div class="map">
 <iframe src="https://www.google.com/maps?q=The%20Good%20Locals%20Iloilo&output=embed"></iframe>
 </div>
